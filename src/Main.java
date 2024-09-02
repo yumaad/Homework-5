@@ -16,27 +16,25 @@ public class Main {
         }
 
         // task #2
-        int clientDeviceYear = 2015;
-        boolean isOld = clientDeviceYear < 2015;
-        if (clientOS == 0)
+        int clientDeviceYear = 2010;
+        switch (clientOS)
         {
-            System.out.println("Установите версию приложения для iOS по ссылке");
-            if (isOld)
-            {
-                System.out.println("Установите облегченную версию приложения для iOS по ссылке");
-            }
-        }
-        else if (clientOS == 1)
-        {
-            System.out.println("Установите версию приложения для Android по ссылке");
-            if (isOld)
-            {
-                System.out.println("Установите облегченную версию приложения для Android по ссылке");
-            }
-        }
-        else
-        {
-            System.out.println("Версии приложения для такой операционный системы нет");
+            case 0:
+                System.out.println("Установите версию приложения для iOS по ссылке");
+                if (clientDeviceYear < 2015)
+                {
+                    System.out.println("Установите облегченную версию приложения для iOS по ссылке");
+                }
+                break;
+            case 1:
+                System.out.println("Установите версию приложения для Android по ссылке");
+                if (clientDeviceYear < 2015)
+                {
+                    System.out.println("Установите облегченную версию приложения для Android по ссылке");
+                }
+                break;
+            default:
+                System.out.println("Версии приложения для такой операционный системы нет");
         }
 
         // task #3
@@ -77,24 +75,35 @@ public class Main {
         }
 
         // task #5
-        int numberOfMonth = 6;
-        switch (numberOfMonth)
-        {
-            case 1: case 2: case 12:
-                System.out.println("\nПринадлежит к сезону зима");
-                break;
-            case 3: case 4: case 5:
-                System.out.println("\nПринадлежит к сезону весна");
-                break;
-            case 6: case 7: case 8:
-                System.out.println("\nПринадлежит к сезону лето");
-                break;
-            case 9: case 10: case 11:
-                System.out.println("\nПринадлежит к сезону зима");
-                break;
-            default:
-                System.out.println("\nТакого месяца нет, введите число до 12");
-                break;
+        int monthNumber = 6;
+        if (monthNumber <= 12) {
+            switch (monthNumber) {
+                case 1:
+                case 2:
+                case 12:
+                    System.out.println("\nПринадлежит к сезону зима");
+                    break;
+                case 3:
+                case 4:
+                case 5:
+                    System.out.println("\nПринадлежит к сезону весна");
+                    break;
+                case 6:
+                case 7:
+                case 8:
+                    System.out.println("\nПринадлежит к сезону лето");
+                    break;
+                case 9:
+                case 10:
+                case 11:
+                    System.out.println("\nПринадлежит к сезону зима");
+                    break;
+            }
         }
+        else
+        {
+            System.out.println("\nТакого месяца нет, введите число до 12");
+        }
+
     }
 }
